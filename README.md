@@ -15,9 +15,8 @@ X add key/URL as secrets
 
 ## Components
 
-- dogList for Home view(fetch)
-  -dogForm for new and edit views(fetch-insert)
-  -dogDetail for dog detail page (fetch)
+-header
+-dogForm for new and edit views(fetch-insert)
 
 ## Routes
 
