@@ -27,9 +27,9 @@ X add key/URL as secrets
 
 ## Order of Operations (work vertically!)
 
-Xset up supabase table
--fetch dogList and display on Home
--set up Route to home
+X set up supabase table
+X fetch dogList and display on Home
+X set up Route to home
 -fetch Dogdetails and display on dogdetail page
 -set up route to dogDetails
 -build dog form (new)

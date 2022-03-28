@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { fetchDogs } from '../../services/dogsfetch';
+import './Home.css';
 
 export default function DogsList() {
   const [dogs, setDogs] = useState([]);
