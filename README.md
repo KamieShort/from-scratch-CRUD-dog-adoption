@@ -2,9 +2,9 @@
 
 ## SupaBase Table
 
--columns: name, age, breed, bio, image
--start with 4 dogs
--add key/URL as secrets
+X columns: name, age, breed, bio, image
+X start with 4 dogs
+X add key/URL as secrets
 
 ## Views
 
@@ -28,7 +28,7 @@
 
 ## Order of Operations (work vertically!)
 
--set up supabase table
+Xset up supabase table
 -fetch dogList and display on Home
 -set up Route to home
 -fetch Dogdetails and display on dogdetail page
