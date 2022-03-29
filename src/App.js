@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './views/Home/Home';
 import DogsDetails from './views/dogsDetails/dogsDetails';
-import NewForm from './views/newForm/newForm';
+import DogForm from './views/newForm/newForm';
 import './App.css';
 
 function App() {
@@ -14,9 +14,9 @@ function App() {
           </Route>
           <Route exact path="/dogs/:id">
             <DogsDetails />
-          </Route>
-          <Route exact path="/dogs/new">
-            <NewForm />
+            <Route exact path="/dogs/new">
+              <DogForm />
+            </Route>
           </Route>
         </Switch>
       </div>

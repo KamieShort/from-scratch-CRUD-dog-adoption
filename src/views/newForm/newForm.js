@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DogForm from '../../services/components/DogForm/dogForm';
 
 export default function NewForm() {
   const [name, setName] = useState('');
@@ -9,7 +10,7 @@ export default function NewForm() {
 
   return (
     <div>
-      <NewForm
+      <DogForm
         {...{
           name,
           setName,
