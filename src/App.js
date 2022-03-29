@@ -12,11 +12,11 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
+          <Route exact path="/dogs/new">
+            <DogForm />
+          </Route>
           <Route exact path="/dogs/:id">
             <DogsDetails />
-            <Route exact path="/dogs/new">
-              <DogForm />
-            </Route>
           </Route>
         </Switch>
       </div>

@@ -10,6 +10,7 @@ export default function NewForm() {
 
   return (
     <div>
+      <div>New Form</div>
       <DogForm
         {...{
           name,
