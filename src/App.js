@@ -11,12 +11,11 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/DogsDetails">
+          <Route exact path="/dogs/:id">
             <DogsDetails />
           </Route>
         </Switch>
       </div>
-      ;
     </BrowserRouter>
   );
 }

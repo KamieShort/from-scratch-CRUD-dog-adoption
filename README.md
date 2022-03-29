@@ -30,8 +30,9 @@ X add key/URL as secrets
 X set up supabase table
 X fetch dogList and display on Home
 X set up Route to home
--fetch Dogdetails and display on dogdetail page
--set up route to dogDetails
+-add loading state
+-fetch dogbyID and display on dogdetail page (dog id)
+-set up route to dogDetails (dog id)
 -build dog form (new)
 -set up error (try/catch)
 -fetch function for new (insert)
