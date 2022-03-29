@@ -21,14 +21,12 @@ export default function DogsList() {
       <h1>All Things Dogs!</h1>
 
       {dogs.map((dog) => (
-        <>
-          <div key={dog.id} {...dog}>
-            <Link to={`/dogs/${dog.id}`}>
-              <h2>{dog.name}</h2>
-            </Link>
-            <img className="img" src={`${dog.image}`} />
-          </div>
-        </>
+        <div key={dog.id}>
+          <Link to={`/dogs/${dog.id}`}>
+            <h2>{dog.name}</h2>
+          </Link>
+          <img className="img" src={`${dog.image}`} />
+        </div>
       ))}
     </div>
   );

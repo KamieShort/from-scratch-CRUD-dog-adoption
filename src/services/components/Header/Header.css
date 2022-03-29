@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  /* font-family: 'Permanent Marker', cursive; */
+  text-align: center;
+  font-size: 25px;
+  color: white;
+}
+
+.nav {
+  margin-top: 2px;
+
+  margin-left: 15px;
+}

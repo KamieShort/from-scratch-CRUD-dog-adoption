@@ -15,6 +15,9 @@ export default function DogsDetails() {
     };
     fetchData();
   }, [params.id]);
+
+  if (!dogsDetails) return <div>...Loading</div>;
+
   return (
     <div className="dogDetails">
       <h2>Dog Details</h2>
@@ -23,7 +26,8 @@ export default function DogsDetails() {
       <p>Breed: {dogsDetails.breed}</p>
       <p>Bio: {dogsDetails.bio}</p>
       <img className="img" src={`${dogsDetails.image}`} />
-      <Link to="/dogs/:id/edit">Edit</Link>
+      {/* <Link to="/dogs/:id/edit">Edit</Link> */}
+      <Link to={`/dogs/${dogsDetails.id}/edit`}>Edit</Link>
     </div>
   );
 }

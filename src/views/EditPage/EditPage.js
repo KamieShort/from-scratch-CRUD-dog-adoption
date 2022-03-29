@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { fetchDogsById, updateDog } from '../../services/dogsfetch';
 import DogForm from '../../services/components/DogForm/dogForm';
 
@@ -13,6 +13,8 @@ export default function EditPage() {
   const [image, setImage] = useState('');
   const [error, setError] = useState('');
 
+  const history = useHistory();
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchDogsById(params.id);
@@ -21,6 +23,7 @@ export default function EditPage() {
       setBreed(data.breed);
       setBio(data.bio);
       setImage(data.image);
+      console.log(data);
     };
     fetchData();
   }, [params.id]);
@@ -29,18 +32,18 @@ export default function EditPage() {
       await updateDog({ id: params.id, name, age, breed, bio, image });
       history.push(`/dogs/${params.id}`);
     } catch (e) {
-      setError('error');
+      setError('Error-');
     }
   };
 
   return (
     <div>
+      Edit Dog
       {error && (
         <p>
-          {error} <span onClick={() => setError('')}></span>
+          {error} <span onClick={() => setError('')}>Try Again</span>
         </p>
       )}
-
       <DogForm
         {...{
           name,
