@@ -27,7 +27,8 @@ export default function EditPage() {
     };
     fetchData();
   }, [params.id]);
-  const submit = async () => {
+  const submit = async (e) => {
+    e.preventDefault();
     try {
       await updateDog({ id: params.id, name, age, breed, bio, image });
       history.push(`/dogs/${params.id}`);
