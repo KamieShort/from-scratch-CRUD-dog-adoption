@@ -21,7 +21,7 @@ export default function DogForm({
       </label>
       <label>
         Age:
-        <input type="text" value={age} onChange={(e) => setAge(e.target.value)} />
+        <input type="number" value={age} onChange={(e) => setAge(e.target.value)} />
       </label>
       <label>
         Breed:
