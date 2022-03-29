@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchDogsById } from '../../services/dogsfetch';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function DogsDetails() {
   const params = useParams();
@@ -22,6 +23,7 @@ export default function DogsDetails() {
       <p>Breed: {dogsDetails.breed}</p>
       <p>Bio: {dogsDetails.bio}</p>
       <img className="img" src={`${dogsDetails.image}`} />
+      <Link to="/dogs/:id/edit">Edit</Link>
     </div>
   );
 }

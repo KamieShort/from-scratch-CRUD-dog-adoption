@@ -18,7 +18,7 @@ export default function NewForm() {
       await newDog({ name, age, breed, bio, image });
       history.push('/');
     } catch (e) {
-      setError('Error Here');
+      setError('Error-');
     }
   };
 
@@ -26,7 +26,7 @@ export default function NewForm() {
     <div>
       {error && (
         <p>
-          {error} <span onClick={() => setError('')}>test error</span>
+          {error} <span onClick={() => setError('')}>Try Again</span>
         </p>
       )}
       <div>New Form</div>
