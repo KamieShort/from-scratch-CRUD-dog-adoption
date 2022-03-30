@@ -40,7 +40,7 @@ export default function EditPage() {
 
   return (
     <div className="edit-form">
-      <h3>Edit Dog</h3>
+      <h2>Edit Dog</h2>
       {error && (
         <p>
           {error} <span onClick={() => setError('')}>Try Again</span>

@@ -37,7 +37,11 @@ export default function DogsDetails() {
       {/* <Link to="/dogs/:id/edit">Edit</Link> */}
       <p className="edit-link">
         <Link to={`/dogs/${dogsDetails.id}/edit`}>Edit</Link>
-        <button onClick={remove}>Delete</button>
+        <div>
+          <button className="delete-button" onClick={remove}>
+            Delete
+          </button>
+        </div>
       </p>
     </div>
   );

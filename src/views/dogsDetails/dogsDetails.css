@@ -2,8 +2,22 @@
   font-size: 25px;
   background-color: lightseagreen;
   font-family: 'Handlee', cursive;
+  height: 100vh;
 }
 
 .edit-link {
   font-size: 30px;
+}
+
+h2 {
+  margin: 0px;
+}
+
+.delete-button {
+  font-size: 25px;
+  font-family: 'Handlee', cursive;
+  font-weight: bold;
+  border-radius: 8px;
+  background-color: red;
+  margin-top: 12px;
 }

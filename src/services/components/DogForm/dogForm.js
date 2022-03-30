@@ -14,7 +14,7 @@ export default function DogForm({
   submit,
 }) {
   return (
-    <form>
+    <form className="dog-form">
       <label>
         Name:
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
@@ -35,7 +35,9 @@ export default function DogForm({
         Image:
         <input type="text" value={image} onChange={(e) => setImage(e.target.value)} />
       </label>
-      <button onClick={submit}>Save</button>
+      <button className="save-button" onClick={submit}>
+        Save
+      </button>
     </form>
   );
 }
