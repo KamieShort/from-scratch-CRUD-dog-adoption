@@ -5,7 +5,8 @@ import DogsDetails from './views/dogsDetails/dogsDetails';
 import DogForm from './views/newForm/newForm';
 import EditPage from './views/EditPage/EditPage';
 import Header from './services/components/Header/Header';
-import Auth from './views/Auth/Auth';
+import SignInAuth from './views/Auth/SignIn';
+import SignUpAuth from './views/Auth/SignUp';
 import { getUser } from './services/users';
 import './App.css';
 
@@ -13,14 +14,17 @@ function App() {
   const [currentUser, setCurrentUser] = useState(getUser());
   return (
     <BrowserRouter>
-      <Header />
+      <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
       <div className="App">
         <Switch>
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/auth">
-            <Auth setCurrentUser={setCurrentUser} />
+          <Route exact path="/signInAuth">
+            <SignInAuth setCurrentUser={setCurrentUser} />
+          </Route>
+          <Route exact path="/signUpAuth">
+            <SignUpAuth setCurrentUser={setCurrentUser} />
           </Route>
           <Route exact path="/dogs/new">
             <DogForm />
