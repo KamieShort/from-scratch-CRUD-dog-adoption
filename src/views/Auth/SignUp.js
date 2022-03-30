@@ -1,24 +1,30 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { signUpUser } from '../../services/users';
+import './Auth.css';
 
 export default function SignUpAuth({ setCurrentUser }) {
   const [signUpEmail, setSignUpEmail] = useState('');
   const [signUpPassword, setSignUpPassword] = useState('');
+  const [error, setError] = useState('');
 
   const history = useHistory();
 
   const signUpSubmit = async (e) => {
     e.preventDefault();
-
-    const resp = await signUpUser(signUpEmail, signUpPassword);
-    setCurrentUser(resp.email);
-    history.push('/');
+    try {
+      const resp = await signUpUser(signUpEmail, signUpPassword);
+      setCurrentUser(resp.email);
+      history.push('/');
+    } catch (e) {
+      setError(e.message);
+    }
   };
   return (
     <div>
-      <form onSubmit={signUpSubmit}>
-        Sign Up
+      {error && <p>{error}</p>}
+      <h1>Sign Up</h1>
+      <form className="signupform" onSubmit={signUpSubmit}>
         <label>
           Email:
           <input
