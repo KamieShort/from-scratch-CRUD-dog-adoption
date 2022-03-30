@@ -2,3 +2,8 @@
   height: 300px;
   border: solid black;
 }
+
+.dogs {
+  font-family: 'Handlee', cursive;
+  background-color: lightseagreen;
+}

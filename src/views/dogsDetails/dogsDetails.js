@@ -1,20 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { fetchDogsById } from '../../services/dogsfetch';
-import { useParams } from 'react-router-dom';
+import { deleteDog, fetchDogsById } from '../../services/dogsfetch';
+import { useParams, useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import './dogsDetails.css';
 
 export default function DogsDetails() {
   const params = useParams();
+  const id = params.id;
   const [dogsDetails, setDogsDetails] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchDogsById(params.id);
+      const data = await fetchDogsById(id);
 
       setDogsDetails(data);
     };
     fetchData();
-  }, [params.id]);
+  }, [id]);
+
+  const remove = async () => {
+    await deleteDog(id);
+    history.push('/');
+  };
 
   if (!dogsDetails) return <div>...Loading</div>;
 
@@ -27,7 +35,10 @@ export default function DogsDetails() {
       <p>Bio: {dogsDetails.bio}</p>
       <img className="img" src={`${dogsDetails.image}`} />
       {/* <Link to="/dogs/:id/edit">Edit</Link> */}
-      <Link to={`/dogs/${dogsDetails.id}/edit`}>Edit</Link>
+      <p className="edit-link">
+        <Link to={`/dogs/${dogsDetails.id}/edit`}>Edit</Link>
+        <button onClick={remove}>Delete</button>
+      </p>
     </div>
   );
 }
