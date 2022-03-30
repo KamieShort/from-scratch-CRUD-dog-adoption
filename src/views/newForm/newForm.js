@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import DogForm from '../../services/components/DogForm/dogForm';
 import { newDog } from '../../services/dogsfetch';
+import './newForm.css';
 
 export default function NewForm() {
   const [name, setName] = useState('');
@@ -30,7 +31,7 @@ export default function NewForm() {
           {error} <span onClick={() => setError('')}>Try Again</span>
         </p>
       )}
-      <div>New Form</div>
+      <div className="new-form">New Form</div>
       <DogForm
         {...{
           name,

@@ -1,4 +1,5 @@
 import React from 'react';
+import './dogForm.css';
 
 export default function DogForm({
   name,
