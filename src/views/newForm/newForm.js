@@ -5,7 +5,7 @@ import { newDog } from '../../services/dogsfetch';
 
 export default function NewForm() {
   const [name, setName] = useState('');
-  const [age, setAge] = useState(null);
+  const [age, setAge] = useState('');
   const [breed, setBreed] = useState('');
   const [bio, setBio] = useState('');
   const [image, setImage] = useState('');
@@ -13,7 +13,8 @@ export default function NewForm() {
 
   const history = useHistory();
 
-  const submit = async () => {
+  const submit = async (e) => {
+    e.preventDefault();
     try {
       await newDog({ name, age, breed, bio, image });
       history.push('/');

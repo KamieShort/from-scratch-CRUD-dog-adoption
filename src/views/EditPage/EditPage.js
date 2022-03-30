@@ -7,7 +7,7 @@ export default function EditPage() {
   const params = useParams();
 
   const [name, setName] = useState('');
-  const [age, setAge] = useState(null);
+  const [age, setAge] = useState('');
   const [breed, setBreed] = useState('');
   const [bio, setBio] = useState('');
   const [image, setImage] = useState('');
@@ -18,12 +18,12 @@ export default function EditPage() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchDogsById(params.id);
+
       setName(data.name);
       setAge(data.age);
       setBreed(data.breed);
       setBio(data.bio);
       setImage(data.image);
-      console.log(data);
     };
     fetchData();
   }, [params.id]);
