@@ -16,6 +16,8 @@ export default function DogsList() {
     fetchData();
   }, []);
 
+  if (!dogs) return <div>...Loading</div>;
+
   return (
     <div className="dogs">
       <h1>All Things Dogs!</h1>

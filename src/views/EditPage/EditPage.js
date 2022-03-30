@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { fetchDogsById, updateDog } from '../../services/dogsfetch';
 import DogForm from '../../services/components/DogForm/dogForm';
+import './EditPage.css';
 
 export default function EditPage() {
   const params = useParams();
@@ -38,14 +39,15 @@ export default function EditPage() {
   };
 
   return (
-    <div>
-      Edit Dog
+    <div className="edit-form">
+      <h3>Edit Dog</h3>
       {error && (
         <p>
           {error} <span onClick={() => setError('')}>Try Again</span>
         </p>
       )}
       <DogForm
+        className="dog-form"
         {...{
           name,
           setName,

@@ -1,0 +1,10 @@
+.edit-form {
+  display: flex;
+  font-family: 'Handlee', cursive;
+  flex-direction: column;
+}
+
+.dog-form {
+  display: flex;
+  flex-direction: column;
+}
