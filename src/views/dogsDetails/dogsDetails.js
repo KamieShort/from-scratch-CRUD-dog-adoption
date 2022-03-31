@@ -4,7 +4,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './dogsDetails.css';
 
-export default function DogsDetails() {
+export default function DogsDetails({ currentUser }) {
   const params = useParams();
   const id = params.id;
   const [dogsDetails, setDogsDetails] = useState([]);
@@ -36,13 +36,16 @@ export default function DogsDetails() {
       <img className="img" src={`${dogsDetails.image}`} />
       {/* <Link to="/dogs/:id/edit">Edit</Link> */}
       <p className="edit-link">
-        <Link to={`/dogs/${dogsDetails.id}/edit`}>Edit</Link>
-        <div>
+        {currentUser && <Link to={`/dogs/${dogsDetails.id}/edit`}>Edit</Link>}{' '}
+      </p>
+
+      <div>
+        {currentUser && (
           <button className="delete-button" onClick={remove}>
             Delete
           </button>
-        </div>
-      </p>
+        )}
+      </div>
     </div>
   );
 }

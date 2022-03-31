@@ -31,7 +31,7 @@ export default function NewForm() {
           {error} <span onClick={() => setError('')}>Try Again</span>
         </p>
       )}
-      <div className="new-form">New Form</div>
+      <h1 className="new-form">New Form</h1>
       <DogForm
         {...{
           name,

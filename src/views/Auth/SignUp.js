@@ -23,7 +23,7 @@ export default function SignUpAuth({ setCurrentUser }) {
   return (
     <div>
       {error && <p>{error}</p>}
-      <h1>Sign Up</h1>
+      <h1 className="sign-uph1">Sign Up</h1>
       <form className="signupform" onSubmit={signUpSubmit}>
         <label>
           Email:
