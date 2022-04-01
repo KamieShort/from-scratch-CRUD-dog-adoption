@@ -1,3 +1,9 @@
 .dog-form {
   font-family: 'Handlee', cursive;
 }
+
+.save-button {
+  margin-left: 45%;
+  text-align: center;
+  width: 10%;
+}
