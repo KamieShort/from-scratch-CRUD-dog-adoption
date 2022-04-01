@@ -1,0 +1,20 @@
+.edit-form {
+  display: flex;
+  font-family: 'Handlee', cursive;
+  flex-direction: column;
+}
+
+.dog-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-size: 25px;
+}
+
+.save-button {
+  margin-top: 20px;
+  font-size: 25px;
+  font-family: 'Handlee', cursive;
+  font-weight: bold;
+  border-radius: 8px;
+}

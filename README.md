@@ -1,25 +1,69 @@
-# Alchemy React Base Template
+# Dog Adoption Plan
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## SupaBase Table
 
-Use this template for all your "from scratch" deliverables. To start, simply run
+X columns: name, age, breed, bio, image
+X start with 4 dogs
+X add key/URL as secrets
 
-- `npm install`
-- `npm start`
+## Views
 
-## Available Scripts
+-Home
+-Dog Detail
+-Edit
+-New
 
-In the project directory, you can run:
+## Components
 
-### `npm start`
+-header
+-dogForm for new and edit views(fetch-insert)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Routes
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+/home
+/dogs/:id
+/dogs/:id/edit
+/dogs/new
 
-### `npm test`
+## Order of Operations (work vertically!)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+X set up supabase table
+X fetch dogList and display on Home
+X set up Route to home
+-add loading state
+-fetch dogbyID and display on dogdetail page (dog id)
+-set up route to dogDetails (dog id)
+-build dog form (new)
+-set up error (try/catch)
+-fetch function for new (insert)
+-add route for new
+-build edit function
+-css as needed
+
+## Rubric
+
+Deployed on Netlify, PR open with preview deploy 1
+DogList component
+rendered by home 1
+calls supabase in a useEffect and sets the result in state 1
+has a loading state 1
+renders list of dogs 1
+links to each dog’s detail page 1
+DogDetail component
+rendered by /dogs/:id 1
+calls supabase in a useEffect and sets the result in state 1
+has a loading state 1
+renders dog details 1
+New view
+Linked from a nav bar 1
+Shows a form for adding dog information 1
+User can add dogs to the database and see a success message 1
+User sees an error message if the supabase request fails 1
+EditDog view
+Linked from the Detail view 1
+Shows the pre-filled form for editing the dog’s information 1
+User can edit dog’s information and see a success message 1
+User sees an error message if the supabase request fails 1
+Deleting Dogs
+User can delete the dog from its detail page 1
+User is redirected back to the home page after successful deletion 1
