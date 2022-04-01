@@ -9,6 +9,7 @@ export default function DogsDetails({ currentUser }) {
   const id = params.id;
   const [dogsDetails, setDogsDetails] = useState([]);
   const history = useHistory();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +25,11 @@ export default function DogsDetails({ currentUser }) {
     history.push('/');
   };
 
-  if (!dogsDetails) return <div>...Loading</div>;
+  setTimeout(() => {
+    setLoading(false);
+  }, 750);
+
+  if (loading) return <div>...Loading</div>;
 
   return (
     <div className="dogDetails">
